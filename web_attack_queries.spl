@@ -1,0 +1,4 @@
+index=web_logs
+| search "UNION SELECT" OR "<script>" OR "../" OR "%3Cscript%3E"
+| stats count by src_ip, uri
+| sort -count
